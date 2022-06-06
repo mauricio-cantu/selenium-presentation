@@ -1,0 +1,15 @@
+{
+  "name": "selenium-presentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test:github": "node tests/github.js"
+  },
+  "dependencies": {
+    "chromedriver": "^99.0.0",
+    "geckodriver": "^3.0.1",
+    "selenium-webdriver": "^4.2.0"
+  }
+}
