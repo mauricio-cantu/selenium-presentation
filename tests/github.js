@@ -1,10 +1,11 @@
 import { By, Key, Builder } from "selenium-webdriver";
 import "chromedriver";
+import { Browser } from "selenium-webdriver";
 const sleep = 4000;
 
-async function seleniumGithub () {
+async function runTest () {
     // abre o navegador
-    const driver = await new Builder().forBrowser("chrome").build();
+    const driver = await new Builder().forBrowser(Browser.CHROME).build();
     await driver.manage().window().maximize();
     
     await driver.sleep(sleep);
@@ -26,12 +27,19 @@ async function seleniumGithub () {
     // pressiona "enter" para realizar a pesquisa
     await searchField.sendKeys(Key.ENTER);
 
+    // encontra o link do repositorio do Selenium
     const link = await driver.findElement(By.xpath('//a[contains(@href,"SeleniumHQ/selenium")]'))
 
     await driver.sleep(sleep);
 
+    // clica no link
     await link.click();
+
+    await driver.sleep(sleep);
+
+    // fecha o navegador
+    await driver.close();
 
 }
 
-seleniumGithub();
+runTest();
