@@ -1,24 +1,24 @@
 import { By, Key, Builder } from "selenium-webdriver";
 import "chromedriver";
 import { Browser } from "selenium-webdriver";
-const sleep = 4000;
+const sleep = 3000;
 
-async function runTest () {
+async function runTest() {
     // abre o navegador
     const driver = await new Builder().forBrowser(Browser.CHROME).build();
     await driver.manage().window().maximize();
-    
+
     await driver.sleep(sleep);
-    
+
     // acessa a home do github
     await driver.get("https://github.com");
-    
+
     // aperta "/" para habilitar o campo de busca
     driver.actions().keyDown(Key.DIVIDE);
-    
+
     const searchField = await driver.switchTo().activeElement();
     await driver.sleep(sleep);
-    
+
     // insere o termo de pesquisa no campo
     await searchField.sendKeys('sselenium');
 

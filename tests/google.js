@@ -1,20 +1,20 @@
 import { By, Key, Builder } from "selenium-webdriver";
 import "chromedriver";
 import { Browser } from "selenium-webdriver";
-const sleep = 4000;
+const sleep = 3000;
 
-async function runTest () {
+async function runTest() {
     // abre o navegador
     const driver = await new Builder().forBrowser(Browser.CHROME).build();
 
     // maximiza a janela do browser
     await driver.manage().window().maximize();
-    
+
     await driver.sleep(sleep);
-    
+
     // acessa o google
     await driver.get("https://google.com");
-    
+
     await driver.sleep(sleep);
 
     // pesquisa por 'programming memes'
@@ -32,7 +32,7 @@ async function runTest () {
 
     // fecha o navegador
     await driver.close();
-    
+
 
 }
 

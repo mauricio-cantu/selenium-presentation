@@ -6,11 +6,15 @@
   "license": "MIT",
   "scripts": {
     "test:github": "node tests/github.js",
-    "test:google": "node tests/google.js"
+    "test:google": "node tests/google.js",
+    "test:jest": "jest"
   },
   "dependencies": {
-    "chromedriver": "^99.0.0",
+    "chromedriver": "102",
     "geckodriver": "^3.0.1",
     "selenium-webdriver": "^4.2.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1"
   }
 }
